@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello MIDI!</title>
+<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true"/>
+<script src="JZZ-modules/javascript/JZZ.js"></script>
+<script src="JZZ-modules/javascript/JZZ.synth.OSC.js"></script>
+</head>
+
+<body>
+<h1>Hello MIDI!</h1>
+
+<script><!--
+JZZ.synth.OSC.register('Synth');
+var port = JZZ().openMidiOut('Synth').or(function(){alert('Cannot open MIDI port!');});
+console.log('this is the port info ',port.info());
+function play(){
+  port.send([0x90,60,100]).send([0x90,64,100]).send([0x90,67,100]);
+}
+
+function stop(){
+  port.send([0x80,60,0]).send([0x80,64,0]).send([0x80,67,0]);
+}
+--></script>
+
+<button onmousedown='play();' onmouseup='stop();'> Press to play... </button>
+
+</body>
+</html>
