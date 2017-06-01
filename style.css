@@ -1,5 +1,5 @@
 .red {
-  background-color: red;
+  background-color: red !important;
 }
 .blue {
   background-color: blue !important;
@@ -18,7 +18,15 @@
 body {
   background-color: grey;
 }
-
+.grey {
+  background-color: grey;
+}
+.silver{
+  background-color: silver;
+}
+.white {
+  background-color: white;
+}
 h1 {
   color: red
 }
